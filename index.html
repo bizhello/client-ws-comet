@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>client-ws-comet</title>
+</head>
+
+<body class="body">
+    <div class="content">
+        <section class="header">
+            <h1 class='header__text'>ПРИВЕТ</h1>
+            <h2 class="header__text">НЕЗНАКОМЕЦ !</h2>
+            <h3 class="header__text">ДОБРО ПОЖАЛОВАТЬ В ЧАТ</h3>
+        </section>
+        <section class="register">
+            <label class="register__label" for="input-name">
+                Введите свое имя
+                <input class="register__input" type="text" name="input-name">
+            </label>
+            <button class="register__button button">Сохранить</button>
+        </section>
+        <section class="chat">
+            <h3 class="chat__name">Ваше имя: </h3>
+            <h2 class="chat__title">Общий чат</h2>
+            <ul class="chat__box">
+                <li class="chat__person">
+                    <p class="chat__person-name">Вася Пупкин</p>
+                    <p class="chat__person-message">рфывофвыфолрвывфолрыфлор</p>
+                </li>
+                <li class="chat__person">
+                    <p class="chat__person-name">Петя Нурвдывпкамоыш</p>
+                    <p class="chat__person-message">рфывофвыфолрвывфолрыфлоррфывофвыфолрвывфолрыфлор</p>
+                </li>
+                <li class="chat__person">
+                    <p class="chat__person-name">Генадий Анкадьевич</p>
+                    <p class="chat__person-message">
+                        рфывофвыфолрвывфолрыфлоррфывофвыфолрвывфолрыфлоррфывофвыфолрвывфолрыфлор</p>
+                </li>
+            </ul>
+            <div class='chat__send'>
+                <textarea class="textarea" name="textarea" rows="3" cols="50" maxlength="100"
+                    placeholder="Напишите текст">
+
+                </textarea>
+                <button class="register__button button">отправить</button>
+            </div>
+
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
