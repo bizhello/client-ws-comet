@@ -6,6 +6,7 @@ const chatButton = document.querySelector('.chat__button');
 
 let userName = ''
 let textareaValue = ''
+let chatData = []
 
 textarea.value = ''
 
@@ -19,17 +20,39 @@ saveNameButton.addEventListener('click', () => {
 chatButton.addEventListener('click', () => {
     textareaValue = textarea.value
     textarea.value = ''
-
-    console.log(textareaValue)
 })
 
-
 try {
-    let socket = new WebSocket("ws://localhost:3000");
-    
-    socket.onopen = function(e) {
-        console.log('Socket OPEN')
-    };
+    const socket = io("ws://localhost:3000");
+    let data = {
+        name: 'RoskГена',
+        message: 'aSKDasdasdasdas',
+    }
+
+    socket.emit('newMessage', data, (dat) => console.log(dat));
+
+    socket.on('newMessage', function (data) {
+        console.log(data)
+    });
+
 } catch (err) {
-    console.log(111, err)
+    console.log(err)
 }
+
+// try {
+//     let socket = new WebSocket("ws://localhost:3000");
+
+//     socket.onopen = function() {
+//         alert("[open] Соединение установлено");
+//         alert("Отправляем данные на сервер");
+//         socket.send("Меня зовут Джон");
+//       };
+
+//     socket.onmessage = function (event) {
+//         alert(`[message] Данные получены с сервера: ${event.data}`);
+//         chatData = event.data
+//     };
+
+// } catch (err) {
+//     console.log(111, err)
+// }
